@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stdlib Showcase</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">[stdlib · showcase]</span>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ndarray.html">NDArray</a></li>
+      <li><a href="math.html">Math</a></li>
+      <li><a href="gold.html">Gold</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>stdlib in action.</h1>
+    <p>
+      A GSoC 2026 showcase of <code>stdlib-js</code>— ndarray operations, matrix math, and real-world gold price analysis.
+    </p>
+  </div>
+
+  <div class="container" style="padding-top:0">
+    <div class="cards">
+
+      <a href="ndarray.html" class="card">
+        <p class="card-num">01</p>
+        <h2>NDArray Visualizer</h2>
+        <p>Create ndarrays, inspect strides and slice across dimensions interactively.</p>
+        <ul class="card-tags">
+          <li>@stdlib/ndarray-array</li>
+          <li>@stdlib/ndarray-slice</li>
+          <li>@stdlib/ndarray-strides</li>
+        </ul>
+      </a>
+
+      <a href="math.html" class="card">
+        <p class="card-num">02</p>
+        <h2>Matrix Operations</h2>
+        <p>Dot products and Frobenius norm of matrix multiplication.</p>
+        <ul class="card-tags">
+          <li>@stdlib/blas-base-ddot</li>
+          <li>@stdlib/math-base-special-sqrt</li>
+        </ul>
+      </a>
+
+      <a href="gold.html" class="card">
+        <p class="card-num">03</p>
+        <h2>Gold Price Analysis</h2>
+        <p>NSE(National Stock Exchange) historical OHLCV data used to compute rolling MA, volatility and returns.</p>
+        <ul class="card-tags">
+          <li>@stdlib/stats-base-dmean</li>
+          <li>@stdlib/stats-base-dvariance</li>
+          <li>@stdlib/ndarray-slice</li>
+        </ul>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    Built with <a href="https://stdlib.io" target="_blank">stdlib-js</a> · GSoC 2026
+  </footer>
+
+</body>
+</html>

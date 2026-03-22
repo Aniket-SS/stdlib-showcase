@@ -1,0 +1,30 @@
+{
+  "name": "stdlib-showcase",
+  "version": "1.0.0",
+  "description": "A showcase of stdlib-js for GSoC 2025",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "@stdlib/stats-base-dmean": "*",
+    "@stdlib/stats-base-dvariance": "*",
+    "@stdlib/stats-base-max": "*",
+    "@stdlib/stats-base-min": "*",
+    "@stdlib/math-base-special-sqrt": "*",
+    "@stdlib/blas-base-ddot": "*",
+    "@stdlib/ndarray-array": "*",
+    "@stdlib/ndarray-slice": "*",
+    "@stdlib/ndarray-base-numel": "*",
+    "@stdlib/ndarray-shape": "*",
+    "@stdlib/ndarray-strides": "*",
+    "@stdlib/ndarray-dtype": "*",
+    "@stdlib/ndarray-to-array": "*",
+    "@stdlib/slice-ctor": "*",
+    "@stdlib/slice-multi": "*"
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Analysis · stdlib Showcase</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">[stdlib · showcase]</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ndarray.html">NDArray</a></li>
+      <li><a href="math.html">Math</a></li>
+      <li><a href="gold.html" class="active">Gold</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <small>Part 03</small>
+    <h1>Gold Price Analysis</h1>
+    <p>
+      <a href="https://www.nseindia.com/get-quote/equity/GOLDBEES/NIPPON-INDIA-ETF-GOLD-BEES" target="_blank">NSE GOLDBEES</a> historical OHLCV data parsed from CSV and all statistics computed using 
+      <a href="https://github.com/stdlib-js/stats-base-dmean" target="_blank"><code>@stdlib/stats-base-dmean</code></a>,
+      <a href="https://github.com/stdlib-js/stats-base-dvariance" target="_blank"><code>@stdlib/stats-base-dvariance</code></a>,
+      <a href="https://github.com/stdlib-js/stats-base-max" target="_blank"><code>@stdlib/stats-base-max</code></a>,
+      <a href="https://github.com/stdlib-js/stats-base-min" target="_blank"><code>@stdlib/stats-base-min</code></a> and
+      <a href="https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/base/special/sqrt" target="_blank"><code>@stdlib/math-base-special-sqrt</code></a>.
+    </p>
+  </div>
+
+    <div id="gold-loader" class="loader">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <span>Loading GOLDBEES data…</span>
+    </div>
+    <div id="gold-error" class="alert" style="display:none; max-width: 860px; margin: 0 auto;"></div>
+
+  <div id="gold-content" style="display:none">
+
+    <div class="section">
+      <h2>Data Structure</h2>
+      <div class="output" id="nd-info">—</div>
+    </div>
+
+    <div class="section">
+      <h2>Summary Statistics</h2>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-label">Avg Close</div>
+          <div class="stat-value gold" id="stat-avg">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">6mo High</div>
+          <div class="stat-value up" id="stat-max">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">6mo Low</div>
+          <div class="stat-value down" id="stat-min">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Ann. Volatility</div>
+          <div class="stat-value" id="stat-vol">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Avg Daily Return</div>
+          <div class="stat-value" id="stat-ret">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem">
+        <h2 style="margin:0">Close Price + Rolling MA</h2>
+        <div>
+          <label style="display:inline; margin-right:0.5rem; font-size:12px">MA Window</label>
+          <select id="ma-window" style="width:auto">
+            <option value="5">5-day</option>
+            <option value="10">10-day</option>
+            <option value="20" selected>20-day</option>
+          </select>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="price-canvas" style="height:260px"></canvas>
+      </div>
+      <p class="muted" style="font-size:12px; margin-top:0.5rem">
+        — Close price &nbsp;&nbsp; ╌ Rolling MA (Moving Average)
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Daily Returns</h2>
+      <div class="chart-wrap">
+        <canvas id="returns-canvas" style="height:150px"></canvas>
+      </div>
+      <p class="muted" style="font-size:12px; margin-top:0.5rem">
+        <code>returns[i] = (closes[i+1] - closes[i]) / closes[i]</code>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Volume</h2>
+      <div class="chart-wrap">
+        <canvas id="volume-canvas" style="height:130px"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Built with <a href="https://stdlib.io" target="_blank">stdlib-js</a> · GSoC 2026
+  </footer>
+
+  <script src="js/gold-page.js"></script>
+</body>
+</html>
